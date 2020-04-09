@@ -17,6 +17,21 @@ export const theme = themes.dark;
 
 ---
 
+# Compare
+
+<div style={{width: '75%'}}>
+
+  Your first day on the job. You know vanilla JS. You're expected to contribute right away to an existing codebase. Which one would you prefer?
+
+  - modules, components, templates, data binding, directives, observables, services, dependency injection, etc.
+  - functions, state, effects
+
+</div>
+
+See [Minimal API Surface Area - Learning patterns instead of frameworks](https://2014.jsconf.eu/speakers/sebastian-markbage-minimal-api-surface-area-learning-patterns-instead-of-frameworks.html)
+
+---
+
 # Origins
 
 1. Facebook culture
@@ -27,7 +42,7 @@ Bonus: [Hack](https://hacklang.org/) and [XHP](https://en.wikipedia.org/wiki/XHP
 
 ---
 
-# React Prototype
+# Early React Prototype
 
 <img src={reactPrototype} style={{height: '50%', width: '50%'}} alt="React prototype with six lines of trailing tokens" />
 
@@ -40,6 +55,34 @@ Source: [Jordan Walke - React to the Future](https://www.youtube.com/watch?v=5fG
 <img src={reactPrototypeCircled} style={{height: '50%', width: '50%'}} alt="React prototype with six lines of trailing tokens circled" />
 
 Source: [Jordan Walke - React to the Future](https://www.youtube.com/watch?v=5fG_lyNuEAw)
+
+---
+
+
+<CodeSurferColumns sizes={[1, 2]} themes={[codeTheme, codeTheme]}>
+
+<Step>
+
+  ##  JSX and [Babel](https://babeljs.io/)
+
+  ```jsx
+  const Header = (props) => <h1>{props.text}</h1>;
+  // function Box(props) { ... }
+
+  <Box size="large">
+    <Header text="Hello JSX" />
+    <h2 className="header">Some text</h2>
+  </Box>
+
+  // React.createElement :: (HTML tag string | Component) => (props object) => (...children) => React Node
+  React.createElement(Box, {size: "large"}, 
+    React.createElement(Header, {text: "Hello JSX"}), 
+    React.createElement("h2", {className: "header"}, "Some text"));
+  ```
+
+</Step>
+
+</CodeSurferColumns>
 
 ---
 
@@ -97,10 +140,29 @@ Source: [Jordan Walke - React to the Future](https://www.youtube.com/watch?v=5fG
 
 ---
 
+# Detour: Class Components
+
+https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class
+
+---
+
+# Testing
+
+<Steps>
+
+1. [Jest](https://jestjs.io/)
+1. [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+1. [RTL Example](https://codesandbox.io/s/github/kentcdodds/react-testing-library-examples?file=/src/__local_tests__/async-with-mock.js)
+
+</Steps>
+
+---
+
 # Interesting Things
 
 <Steps>
 
+1. [List of React renderers](https://github.com/chentsulin/awesome-react-renderer)
 1. React-based terminal - [Hyper](https://hyper.is/)
 1. JSX with Markdown - [MDX](https://mdxjs.com/)
 1. [react-spring](https://mdxjs.com/)
