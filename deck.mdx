@@ -1,0 +1,119 @@
+import { Box, Image } from 'theme-ui'
+
+import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer"
+import { vsDark as codeTheme } from "@code-surfer/themes"
+
+import { Steps, themes } from 'mdx-deck'
+
+import reactPrototype from './react-prototype.png';
+import reactPrototypeCircled from './react-prototype-circled.png';
+
+export const theme = themes.dark;
+
+
+# Intro to React
+
+### A different take...
+
+---
+
+# Origins
+
+1. Facebook culture
+1. Separation of concerns
+1. Dog-fooding
+
+Bonus: [Hack](https://hacklang.org/) and [XHP](https://en.wikipedia.org/wiki/XHP)
+
+---
+
+# React Prototype
+
+<img src={reactPrototype} style={{height: '50%', width: '50%'}} alt="React prototype with six lines of trailing tokens" />
+
+Source: [Jordan Walke - React to the Future](https://www.youtube.com/watch?v=5fG_lyNuEAw)
+
+---
+
+# What People Saw
+
+<img src={reactPrototypeCircled} style={{height: '50%', width: '50%'}} alt="React prototype with six lines of trailing tokens circled" />
+
+Source: [Jordan Walke - React to the Future](https://www.youtube.com/watch?v=5fG_lyNuEAw)
+
+---
+
+<CodeSurferColumns sizes={[1, 2]} themes={[codeTheme, codeTheme]}>
+
+<Step>
+
+  ##  Function Components
+
+  ```jsx
+  // Button.js
+  function Button(props) {
+    const type = props.submit ? 'submit' : 'button';
+    return <button type={props.type} className=`btn btn-${props.color}`>{props.children}</button>;
+  }
+
+  // Form.js
+  function EditUserForm() {
+    return (
+      <form>
+        <input type="text" name="firstName" onChange={handleChange} />
+        <Button color='primary' submit>Save Changes</Button>
+      </form>
+    );
+  }
+  ```
+
+</Step>
+
+<Step>
+
+  ##  Function Components
+
+  ```jsx
+  // Button.js
+  function Button({ color, submit, children }) {
+    const type = submit ? 'submit' : 'button';
+    return <button type={type} className=`btn btn-${color}`>{children}</button>;
+  }
+
+  // Form.js
+  function EditUserForm() {
+    return (
+      <form>
+        <input type="text" name="firstName" onChange={handleChange} />
+        <Button color='primary' submit>Save Changes</Button>
+      </form>
+    );
+  }
+  
+  ```
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+# Interesting Things
+
+<Steps>
+
+1. React-based terminal - [Hyper](https://hyper.is/)
+1. JSX with Markdown - [MDX](https://mdxjs.com/)
+1. [react-spring](https://mdxjs.com/)
+1. [React VR](https://facebook.github.io/react-360/)
+1. Server-Side Rendering
+1. [Concurrent React](https://reactjs.org/docs/concurrent-mode-intro.html)
+1. [NextJS](https://nextjs.org/)
+1. [Storybook](https://storybook.js.org/)
+1. [RedwoodJS](https://redwoodjs.com/)
+
+
+</Steps>
+
+---
+
+# The End
